@@ -11,12 +11,12 @@ The whole process takes a little under an hour (which is obviously super slow), 
 3. Movies should be in tiff format. (However this is not mandatory, you will simply need to edit the run.sh routine. It will also work on mrcs movies too.)
 
 # Current dependencies
-scipion
-relion (2 or above)
-python (the follow are easy to install with pip)
-  mrcfile
-  multiprocess
-  numpy
+1. scipion
+2. relion (2 or above)
+3. python (+these packages, the following are easy to install with pip)
+  - mrcfile
+  - multiprocess
+  - numpy
 
 # Manual execution
 
