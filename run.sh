@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This first line is source the appropriate file on your system to initiate modular environments
+# This first line is to source the appropriate file on your system to initiate modular environments
 # If you do not use modular environments, give the absolute path to the appropriate program in the following script or indvidually execute the commands.
 
 source /usr/local/Modules/3.2.9/init/bash
