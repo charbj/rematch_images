@@ -14,9 +14,9 @@ The whole process takes a little under an hour (which is obviously super slow), 
 1. scipion
 2. relion (2 or above)
 3. python (+these packages, the following are easy to install with pip)
-  . mrcfile
-  . multiprocess
-  . numpy
+  - mrcfile
+  - multiprocess
+  - numpy
 
 # Manual execution
 
@@ -49,6 +49,6 @@ This assumes you have modular environment setup on your system. You made need to
 I have hard coded some 'rm' commands into the script to remove unneccessary output directories and files that affect the matching step. I assume this is a huge 'no no', however for my purposes this is a risk I'm willing to live with. Happy for feedback, but you should check through the script before running.
 
 # Contents
-. run.sh - script to run the whole protocol automatically
-. split_stack.py - edited version of scipion's split_stack.py that only creates a copy of the first frame from each movie in a directory.
-. match_loop_lst_parallel.py - parallelised routine to quickly (~15 minutes) match images.
+- run.sh - script to run the whole protocol automatically
+- split_stack.py - edited version of scipion's split_stack.py that only creates a copy of the first frame from each movie in a directory.
+- match_loop_lst_parallel.py - parallelised routine to quickly (~15 minutes) match images.
