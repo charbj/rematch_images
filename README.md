@@ -18,7 +18,7 @@ The whole process takes a little under an hour (which is obviously super slow), 
   - multiprocess
   - numpy
 
-# Manual execution
+# Usage: Manual execution
 
 If you prefer, match_loop_lst_parallel.py can directly be executed as
 
@@ -30,7 +30,7 @@ These act as barcodes and match_loop_lst_parallel.py will compare them to all ot
 
 An output match_lst.txt file will contain the matches images. I use grep to then pull out each group of images according to the FoilHole id that I'm interested in.
 
-# Usage: running with bash script
+# Usage: Running with bash script
 
 This script will automatically extract small barcode snippits from the first frame your raw movies (after first making a copy of the first frame) and then launch match_loop_lst_parallel.py.
 
@@ -43,7 +43,7 @@ Again, first ensure the movies are present in two directorys called movies_origi
 
     bash run.sh
 
-This assumes you have modular environment setup on your system. You made need to edit the run.sh script to ensure modules are loaded correctly. I use this to quickly and easily load/swap between relion and scipion.
+This assumes you have modular environment setup on your system. You may need to edit the run.sh script to ensure modules are loaded correctly. I use this to quickly and easily load/swap between relion and scipion.
 
 # CAUTION (!): 
 I have hard coded some 'rm' commands into the script to remove unneccessary output directories and files that affect the matching step. I assume this is a huge 'no no', however for my purposes this is a risk I'm willing to live with. Happy for feedback, but you should check through the script before running.
