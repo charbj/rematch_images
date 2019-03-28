@@ -1,4 +1,4 @@
-# rematch_images
+# Rematch_images
 Simple tool to match sets of movies within two lists of cryoEM movies (with different names).
 
 The whole process takes a little under an hour (which is obviously super slow), but has already saved me many weeks of re-processing data.
@@ -14,9 +14,9 @@ The whole process takes a little under an hour (which is obviously super slow), 
 1. scipion
 2. relion (2 or above)
 3. python (+these packages, the following are easy to install with pip)
-  - mrcfile
-  - multiprocess
-  - numpy
+  . mrcfile
+  . multiprocess
+  . numpy
 
 # Manual execution
 
@@ -24,7 +24,7 @@ If you prefer, match_loop_lst_parallel.py can directly be executed as
 
     python ./match_loop_lst_parallel.py ./barcode_original/ ./barcode_query/
     
-This assumes you have the two directories above, these should each contain "particles" i.e. 100x100 2d-array that have been extracted from the movies you wish to compare. The exact size if the particle is not important: smaller is faster, but too small will not provide enough confidence of an accurate match - like DNA primers. 
+This assumes you have the two directories above, these should each contain "particles" i.e. 100x100 2d-array that have been extracted from the movies you wish to compare. The exact size if the particle is not important: smaller is faster, but too small will not provide enough confidence of an accurate match - like DNA primers. I use a single coordinate file (for each movie I make a copy), it is critical that the same region be extracted from each movie.
 
 These act as barcodes and match_loop_lst_parallel.py will compare them to all other possible images and match identical arrays. Ideally you should create these from the unaltered raw movies, as these won't have small differences due to interpolation, normalisation, etc., as this would prevent correct matchs from occuring.
 
@@ -45,9 +45,10 @@ Again, first ensure the movies are present in two directorys called movies_origi
 
 This assumes you have modular environment setup on your system. You made need to edit the run.sh script to ensure modules are loaded correctly. I use this to quickly and easily load/swap between relion and scipion.
 
-# CAUTION: I have hard coded some 'rm' commands into the script to remove unneccessary output directories and files that affect the matching step. I assume this is a huge 'no no', however for my purposes this is a risk I'm willing to live with. Happy for feedback, but you should check through the script before running.
+# CAUTION (!): 
+I have hard coded some 'rm' commands into the script to remove unneccessary output directories and files that affect the matching step. I assume this is a huge 'no no', however for my purposes this is a risk I'm willing to live with. Happy for feedback, but you should check through the script before running.
 
 # Contents
-run.sh - script to run the whole protocol automatically
-split_stack.py - edited version of scipion's split_stack.py that only creates a copy of the first frame from each movie in a directory.
-match_loop_lst_parallel.py - parallelised routine to quickly (~15 minutes) match images.
+. run.sh - script to run the whole protocol automatically
+. split_stack.py - edited version of scipion's split_stack.py that only creates a copy of the first frame from each movie in a directory.
+. match_loop_lst_parallel.py - parallelised routine to quickly (~15 minutes) match images.
